@@ -1,0 +1,53 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
+class Buscar{
+	private int[] array1;
+	private int[] array2;
+	
+	public Buscar(int[]array1,int []array2) {
+		this.array1=array1;
+		this.array2=array2;
+	}
+	public ArrayList<Integer>comunes(){
+		ArrayList<Integer>com=new ArrayList<>();
+		for(int i=0;i<array1.length;i++) {
+			for(int j=0;j<array2.length;j++) {
+				if(array1[i]==array2[j]&&!com.contains(array1[i])) {
+					com.add(array1[i]);
+				}
+			}
+		}
+		return com;
+	}
+	public void mostrarpantalla() {
+		ArrayList<Integer>comunes=comunes();
+		System.out.println("Elementos comunes: ");
+		for(int n:comunes) {
+			System.out.println(n+" ");
+		}
+		System.out.println();
+	}
+}
+public class Ejercicio2 {
+	public static void main(String[]args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Ingrese el tamaño de los arrays: ");
+		int t=sc.nextInt();
+		System.out.println("PRIMER ARRAY: \n");
+		int[] array1=new int[t];
+		for(int i=0;i<t;i++) {
+			System.out.println("Ingrese el numero de la posicion "+(i+1)+": ");
+			array1[i]=sc.nextInt();
+		}
+		System.out.println("SEGUNDO ARRAY: \n");
+		int[] array2=new int[t];
+		for(int i=0;i<t;i++) {
+			System.out.println("Ingrese el numero de la posicion "+(i+1)+": ");
+			array2[i]=sc.nextInt();
+		}
+		Buscar buscar=new Buscar(array1, array2);
+		buscar.mostrarpantalla();
+		sc.close();
+	}
+}
