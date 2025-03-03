@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+class Planeta{
+	private int orbita;
+	private int rotacion;
+	public Planeta(int orbita, int rotacion ) {
+		this.orbita=orbita;
+		this.rotacion=rotacion;
+	}
+	public void ImprimirEnPantalla() {
+		System.out.println("Orbita: "+orbita+" años");
+		System.out.println("Rotacion: "+rotacion+" dias");
+	}
+}
+public class Ejercicio4 {
+	public static void main(String[]args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Ingrese los años de orbita: ");
+		int orbita=sc.nextInt();
+		System.out.println("Ingrese los dias de rotacion: ");
+		int rotacion=sc.nextInt();
+		
+		Planeta planeta=new Planeta(orbita,rotacion);
+		System.out.println("\nDatos del Planta: ");
+		planeta.ImprimirEnPantalla();
+		sc.close();
+	}
+}
