@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+class Persona{
+	private String nombre;
+	private String apellido;
+	private int ci;
+	private int nacimiento;
+	
+	public Persona( String nombre, String apellido, int ci, int nacimiento) {
+		this.nombre=nombre;
+		this.apellido=apellido;
+		this.ci=ci;
+		this.nacimiento=nacimiento;
+	}
+	public void ImprimirEnPantalla(){
+		System.out.println("Nombre: "+nombre);
+		System.out.println("Apellido: "+apellido);
+		System.out.println("Carnet de Identidad: "+ci);
+		System.out.println("Año de nacimiento: "+nacimiento);
+	}
+	
+}
+public class Ejercicio3 {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner (System.in);
+		System.out.println("Datos de la persona 1: ");
+		System.out.println("Nombre: ");
+		String nombre1= sc.nextLine();
+		System.out.println("Apellido: ");
+		String apellido1= sc.nextLine();
+		System.out.println("Carnet de Identidad: ");
+		int ci1=sc.nextInt();
+		System.out.println("Año de nacimiento: ");
+		int nacimiento1=sc.nextInt();
+		sc.nextLine();
+		Persona persona1=new Persona (nombre1,apellido1,ci1,nacimiento1);
+		System.out.println("Datos de la persona 2: ");
+		System.out.println("Nombre: ");
+		String nombre2= sc.nextLine();
+		System.out.println("Apellido: ");
+		String apellido2= sc.nextLine();
+		System.out.println("Carnet de Identidad: ");
+		int ci2=sc.nextInt();
+		System.out.println("Año de nacimiento: ");
+		int nacimiento2=sc.nextInt();
+		sc.nextLine();
+		Persona persona2=new Persona (nombre2,apellido2,ci2,nacimiento2);
+		System.out.println("\nDatos de la Persona 1: ");
+		persona1.ImprimirEnPantalla();
+		System.out.println("\nDatos de la Persona 2: ");
+		persona2.ImprimirEnPantalla();
+		sc.close();
+	}
+}
