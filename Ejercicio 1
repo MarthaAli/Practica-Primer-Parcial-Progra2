@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+class Numeros{
+	public int cantidadDigitos(int n) {
+		int c=0;
+		while(n>0) {
+			n/=10;
+			c++;
+		}
+		return c=(c==0)?1:c;
+	}
+	public int potencia(int base, int exp) {
+		int m=1;
+		for(int i=0;i<exp;i++) {
+			m*=base;
+		}
+		return m;
+	}
+	public int esArmstrong(int n) {
+		int digitos=cantidadDigitos(n);
+		int s=0;
+		while(n>0) {
+			int dig=n%10;
+			s+=potencia(dig,digitos);
+			n/=10;
+		}
+		return s;
+	}
+}
+public class Ejercicio1 {
+	public static void main(String []args) {
+		Scanner sc=new Scanner (System.in);
+		System.out.println("Ingrese un numero: ");
+		int n= sc.nextInt();
+		Numeros num = new Numeros();
+		if(num.esArmstrong(n)==n) {
+			System.out.println(n+" es un numero de Armstrong");
+		}
+		else {
+			System.out.println(n+" no es un numero de Armstrong");
+		}
+		sc.close();
+	}
+}
