@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+class Libro{
+	private String titulo;
+	private String autor;
+	private int año;
+	private int paginas;
+	
+	public Libro(String titulo, String autor, int año, int paginas) {
+		this.titulo=titulo;
+		this.autor=autor;
+		this.año=año;
+		this.paginas=paginas;
+	}
+	public void ImprimirEnPantalla() {
+		System.out.println("Titulo: "+titulo);
+		System.out.println("Autor: "+autor);
+		System.out.println("Año de publicacion: "+año);
+		System.out.println("Numero de paginas: "+paginas);
+	}
+	public double TiempoLectura(double n) {
+		return (double) n/50;
+	}
+}
+
+public class Ejercicio5 {
+	public static void main(String[]args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Ingrese el titulo del libro: ");
+		String titulo=sc.nextLine();
+		System.out.println("Ingrese el nombre del Autor: ");
+		String autor=sc.nextLine();
+		System.out.println("Ingrese el año de publicacion: ");
+		int año=sc.nextInt();
+		System.out.println("Ingrese el numero de paginas: ");
+		int paginas=sc.nextInt();
+		
+		Libro libro=new Libro(titulo,autor,año,paginas);
+		System.out.println("\nDatos del Libro: ");
+		libro.ImprimirEnPantalla();
+		System.out.println("\nTiempo estimado de Lectura: "+libro.TiempoLectura(paginas)+" horas");
+		
+		sc.close();
+	}
+
+}
